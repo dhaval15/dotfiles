@@ -214,7 +214,8 @@ ruled.client.connect_signal("request::rules", function()
 			class = {
 				"Gimp-2.10",
 				"Inkscape",
-				"Flowblade"
+				"Flowblade",
+				"Blender",
 			}
 		},
 		properties = { 
