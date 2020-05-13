@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+kitty --config $HOME/.config/kitty/hashcode/kitty.conf --class Develop --title HashCode -e nvim "$@"

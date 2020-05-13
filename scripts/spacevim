@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+kitty --config $HOME/.config/kitty/spacevim/kitty.conf --class Develop --title SpaceVim -e svim "$@"

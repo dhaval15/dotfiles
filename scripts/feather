@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+kitty --config $HOME/.config/kitty/feather/kitty.conf --class VimWriter --title Feather -e fvim "$@"

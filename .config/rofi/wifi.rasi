@@ -1,0 +1,98 @@
+/**
+ * ROFI theme: AWEL 
+ * User: Wangz
+ * Copyright: Dave Davenport
+ */
+
+configuration {
+    display-find:                   "";
+    lines:5;
+}
+
+@import "colors"
+
+* {
+    background-color:  #0C0C22;
+    border-radius: 1;
+    text-color: #dddddd;
+    font: "Hack Bold 10";
+}
+
+#window {
+    /*fullscreen:true;*/
+    location: east;
+    padding: 0;
+    height: 100%;
+    width: 25%;
+}
+
+#mainbox {
+    background-color: #512da8;
+    children: [listview,inputbar];
+    spacing: 10px;
+    padding: 20px 20px;
+}
+
+
+#listview {
+    background-color: #e9e9e900;
+    fixed-height: 0;
+    border: 0px;
+    spacing: 8px;
+    scrollbar: false;
+    padding: 10px 10px 0px;
+}
+
+#element {
+    background-color: #e9e9e900;
+    padding: 8 12;
+    border-radius: 9px;
+}
+
+#element selected {
+    background-color:               #f2f2f230;
+    text-color:                     #ffffff;
+}
+
+#element-icon {
+    size:                           48;
+    border:                         0px;
+}
+
+
+#inputbar {
+    children:   [appbar, prompt,textbox-prompt-colon,entry,case-indicator ];
+    padding: 8px 4px;
+    border: 1;
+    border-color: #ffffff77;
+    border-radius: 8;
+    text-color: #ff0000;
+    background-color: #00000000;
+}
+
+#case-indicator {
+    background-color: #00000000;
+    spacing:    0;
+}
+#entry {
+    background-color: #00000000;
+    spacing:    0;
+}
+#prompt {
+    background-color: #00000000;
+    spacing:    0;
+}
+
+#textbox-prompt-colon {
+    background-color: #00000000;
+    expand:     false;
+    str:        "";
+    margin:     0px 0.3em 0em 0em ;
+}
+
+#appbar {
+    background-color: #00000000;
+    expand:     false;
+    str:        "Apps";
+    margin:     0px 0.3em 0em 0em ;
+}

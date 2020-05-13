@@ -1,0 +1,6 @@
+#/usr/bin/env zsh
+VAR1=$(ls -1 /home/dhaval/.config/kitty/colorschemes | sed -e 's/\.conf$//')
+complete -W $VAR1 ktheme
+complete -W $VAR1 ftheme
+complete -W $VAR1 stheme
+complete -W $VAR1 htheme

@@ -1,0 +1,3 @@
+#!/bin/zsh
+kitty @ set-colors $HOME/.config/kitty/colorschemes/$1.conf
+cat $HOME/.config/kitty/colorschemes/$1.conf > $HOME/.config/kitty/hashcode/colors.conf
