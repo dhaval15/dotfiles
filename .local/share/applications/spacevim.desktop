@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=SpaceVim
+Comment=Code with pleasure!
+Exec=spacevim
+Icon=sublime-text
+Terminal=false
+StartupNotify=true
+Categories=Development;IDE;

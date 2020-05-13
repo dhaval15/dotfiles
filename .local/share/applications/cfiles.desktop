@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=CFiles
+Comment=File Manager
+Exec=kitty --class CFiles --title CFiles --config /home/dhaval/.cfiles/kitty/kitty.conf -e cfiles
+Icon=winefile
+Terminal=false
+StartupNotify=true
+Categories=Create;

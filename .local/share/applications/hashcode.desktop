@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=HashCode
+Comment=Code with pleasure!
+Exec=hashcode
+Icon=moeditor
+Terminal=false
+StartupNotify=true
+Categories=Development;IDE;
