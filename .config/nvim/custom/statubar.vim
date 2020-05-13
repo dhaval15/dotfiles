@@ -36,6 +36,8 @@ function! ChangeStatuslineColor()
   return ''
 endfunction
 
+au InsertLeave,InsertEnter,BufWritePost   * call ChangeStatuslineColor()
+
 function! GitInfo()
   let git = fugitive#head()
   if git != ''
@@ -47,7 +49,7 @@ endfunction
 set laststatus=2
 set noshowmode
 set statusline=
-set statusline+=%{ChangeStatuslineColor()}               " Auto Changing Colors
+set statusline+=%{ChangeStatuslineColor()}              " Auto Changing Colors
 set statusline+=%0*\ %{toupper(g:currentmode[mode()])}\  " The current mode
 set statusline+=%1*\ %<%F%m%r%w\                         " File path, modified, readonly, helpfile, preview
 set statusline+=%3*│                                     " Separator
