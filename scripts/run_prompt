@@ -1,0 +1,2 @@
+#!/bin/zsh
+dmenu2_run -h 28 -fn 'Dejavu Sans' -nb "#0C0C22" -nf "#ffeedd" -sb "#ffeedd" -sf "#0C0C22" -p Run

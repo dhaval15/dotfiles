@@ -111,6 +111,14 @@ local globalKeys = awful.util.table.join(
 		{description = 'Rofi Windows', group = 'Launcher'}
     ),
     awful.key(
+		{modkey},
+		'r',
+		function()
+			awful.spawn("run_prompt")
+		end,
+		{description = 'Rofi Windows', group = 'Launcher'}
+    ),
+    awful.key(
         {modkey}, 
         'Escape', 
         function()
@@ -399,19 +407,6 @@ local globalKeys = awful.util.table.join(
             awful.util.spawn(apps.default.rofiappmenu)
         end,
         {description = "open application drawer", group = 'launcher'}
-    ),
-    awful.key(
-        {modkey},
-        'r',
-        function()
-            local focused = awful.screen.focused()
-
-            if focused.right_panel and focused.right_panel.visible then
-                focused.right_panel.visible = false
-            end
-            screen.primary.left_panel:toggle()
-        end,
-        {description = 'open sidebar', group = 'launcher'}
     ),
     awful.key(
         {modkey, 'Shift'},
