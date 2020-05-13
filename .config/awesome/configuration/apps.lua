@@ -48,6 +48,7 @@ return {
 		'xrdb $HOME/.Xresources',                                                                   -- Load X Colors
 		--'nm-applet',                                                                                -- NetworkManager Applet
 		--'pulseeffects --gapplication-service',                                                      -- Sound Equalizer
+		'xset r rate 210 40',
 		'xmodmap -e "keycode  77 ="',		
 		'xidlehook --not-when-fullscreen --not-when-audio --timer 600 '..
 		' "awesome-client \'_G.show_lockscreen()\'" ""'  											-- Auto lock timer
