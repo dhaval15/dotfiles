@@ -17,88 +17,6 @@ local modalbind = require("modal")
 modalbind.init()
 modalbind.set_location("top")
 
-local ftenmap = {
-    { 
-        "7",
-        function() 
-            awful.spawn("rofi -show drun -theme apps")
-        end,
-        "Apps",
-        "7",
-    },
-    {
-        "0",
-        function()
-            awful.spawn("rofi  -show Find -theme finder -modi Find:rofi_finder")
-        end,
-        "Finder",
-        "0",
-    },
-    {
-        "/",
-        function()
-		local c = awful.client.focus
-  		local grabber
-  		grabber = awful.keygrabber.run(
-		function(mod, key, event)
-    			if event == "release" then return end
-    			if     key == 'Up'    then c:relative_move(0, 0, 0, 5)
-    			elseif key == 'Down'  then c:relative_move(0, 0, 0, -5)
-    			elseif key == 'Right' then c:relative_move(0, 0, 5, 0)
-    			elseif key == 'Left'  then c:relative_move(0, 0, -5, 0)
-    			else   awful.keygrabber.stop(grabber) end
-        
-		end)
-	end,
-        "Dmenu",
-        "/",
-    },
-}
-
--- Vim Like Bindingsi
-
-local map, actions = {
-    verbs = {
-        m = 'move' , f = 'focus' , d = 'delete' , a = 'append',
-        w = 'swap' , p = 'print' , n = 'new'    ,
-    },
-    adjectives = { h = 'left'  , j = 'down' , k = 'up'    , l = 'right' , },
-    nouns      = { c = 'client', t = 'tag'  , s = 'screen', y = 'layout', },
-}, {}
-
-function actions.client(action, adj) print('IN CLIENT!') end --luacheck: no unused args
-function actions.tag   (action, adj) print('IN TAG!'   ) end --luacheck: no unused args
-function actions.screen(action, adj) print('IN SCREEN!') end --luacheck: no unused args
-function actions.layout(action, adj) print('IN LAYOUT!') end --luacheck: no unused args
-
-local function parse(_, stop_key, _, sequence)
-    local parsed, count = { verbs = '', adjectives = '', nouns = '', }, ''
-    sequence = sequence..stop_key
-
-    for i=1, #sequence do
-        local char = sequence:sub(i,i)
-        if char >= '0' and char <= '9' then
-            count = count .. char
-        else
-            for kind in pairs(parsed) do
-                parsed[kind] = map[kind][char] or parsed[kind]
-            end
-        end
-    end
-
-    if parsed.nouns == '' then return end
-    for _=1, count == '' and 1 or tonumber(count) do
-        actions[parsed.nouns](parsed.verbs, parsed.adjectives)
-    end
-end
-
-awful.keygrabber {
-    stop_callback = parse,
-    stop_key   = gears.table.keys(map.verbs),
-    root_keybingins = {
-        {{'Mod4'}, 'v'}
-    },
-}
 
 -- Key bindings
 local globalKeys = awful.util.table.join(
@@ -191,12 +109,6 @@ local globalKeys = awful.util.table.join(
 			awful.spawn("rofi -show window -theme window")
 		end,
 		{description = 'Rofi Windows', group = 'Launcher'}
-    ),
-    awful.key({ }, "#77",
-        function ()
-            modalbind.grab{keymap=ftenmap, name="Shortcuts", stay_in_mode=false}
-        end,
-        {description = "Modal", group = "launcher"}
     ),
     awful.key(
         {modkey}, 
