@@ -135,6 +135,7 @@ ruled.client.connect_signal("request::rules", function()
                			"brave",
 				"Opera",
 				"qutebrowser",
+				"Vivaldi-stable",
 			}
 		},
 		properties = { 
