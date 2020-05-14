@@ -126,6 +126,24 @@ local clientKeys =
 		{description = 'toggle floating', group = 'client'}
 	),
 
+	awful.key(
+		{modkey},
+		'p',
+		function(c)
+			if c.pinned then
+				c.floating = false
+				c.sticky = false
+				c.ontop = false
+				c.pinned = false
+			else
+				c.floating = true
+				c.sticky = true
+				c.ontop = true
+				c.pinned = true
+			end
+		end,
+		{description = 'toggle floating', group = 'client'}
+	),
 	-- move client position
 	awful.key(
 		{modkey},
@@ -169,10 +187,10 @@ local clientKeys =
 	),
 
 	-- Increasing floating client size
-	awful.key({ modkey, shiftkey   }, "Down",   function (c) c:relative_move(  0,  40,   0,   0) end),
-    	awful.key({ modkey, shiftkey   }, "Up",     function (c) c:relative_move(  0, -40,   0,   0) end),
-    	awful.key({ modkey, shiftkey   }, "Left",   function (c) c:relative_move(-40,   0,   0,   0) end),
-    	awful.key({ modkey, shiftkey   }, "Right",  function (c) c:relative_move( 40,   0,   0,   0) end),
+	awful.key({ modkey, shiftkey   }, "Down",   function (c) c:relative_move(  0,  20,   0,   0) end),
+    	awful.key({ modkey, shiftkey   }, "Up",     function (c) c:relative_move(  0, -20,   0,   0) end),
+    	awful.key({ modkey, shiftkey   }, "Left",   function (c) c:relative_move(-20,   0,   0,   0) end),
+    	awful.key({ modkey, shiftkey   }, "Right",  function (c) c:relative_move( 20,   0,   0,   0) end),
 	-- Decreasing floating client size
 	awful.key(
 		{modkey, 'Control'},
@@ -188,13 +206,9 @@ local clientKeys =
 		{modkey, 'Control'},
 		'Down',
 		function(c)
-			if c.floating then
-				local c_height = c.height
-				c:relative_move(0, 0, 0, dpi(-10))
-				if c.height ~= c_height and c.height > 10 then
-					c:relative_move(0, dpi(10), 0, 0)
-				end
-			end
+			 if c.floating and c.height > 10 then
+                                c:relative_move(0, 0, 0, dpi(10))
+                         end
 		end,
 		{description = 'decrease floating client size vertically by 10 px down', group = 'client'}
 	),
@@ -205,7 +219,7 @@ local clientKeys =
 			local current_layout = awful.layout.getname(awful.layout.get(awful.screen.focused()))
         		-- Floating: resize client
         		if current_layout == "floating" or c.floating == true then
-          			c:relative_move(  0,  0, dpi(-20), 0)
+          			c:relative_move(  0,  0, dpi(-10), 0)
         		else
           			awful.tag.incmwfact(-0.03)
         		end
@@ -219,7 +233,7 @@ local clientKeys =
 			local current_layout = awful.layout.getname(awful.layout.get(awful.screen.focused()))
         		-- Floating: resize client
         		if current_layout == "floating" or c.floating == true then
-          			c:relative_move(  0,  0,  dpi(20), 0)
+          			c:relative_move(  0,  0,  dpi(10), 0)
         		else
           			awful.tag.incmwfact( 0.03)
         		end
