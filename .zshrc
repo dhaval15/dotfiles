@@ -261,6 +261,7 @@ alias ssn="sudo shutdown now"
 alias sr="sudo reboot"
 
 alias mflutter="/home/dhaval/development/flutter-master/bin/flutter"
+alias vim="nvim"
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
 ex ()
@@ -297,3 +298,4 @@ source $HOME/scripts/zsh_source/init
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 export PATH=$PATH:/home/dhaval/.dshell/bin
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+
