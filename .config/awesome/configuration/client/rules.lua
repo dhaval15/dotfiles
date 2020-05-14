@@ -118,7 +118,7 @@ ruled.client.connect_signal("request::rules", function()
 			instance = { "QuakeTerminal" }
 		},
 		properties = {
-			tag = '1',
+			tag = '',
 			switchtotag = true,
 			draw_backdrop = false,
 			size_hints_honor = false
@@ -139,7 +139,7 @@ ruled.client.connect_signal("request::rules", function()
 			}
 		},
 		properties = { 
-			tag = '2'
+			tag = ''
 		}
 	}
 
@@ -156,7 +156,7 @@ ruled.client.connect_signal("request::rules", function()
 			},
 		},
 		properties = { 
-			tag = '3'
+			tag = ''
 		}
 	}
 
@@ -173,7 +173,7 @@ ruled.client.connect_signal("request::rules", function()
 			}
 		},
 		properties = { 
-			tag = '4',
+			tag = '',
 			switchtotag = true
 		}
 	}
@@ -186,7 +186,7 @@ ruled.client.connect_signal("request::rules", function()
 			}
 		},
 		properties = { 
-			tag = '5',
+			tag = '',
 			switchtotag = true,
 			draw_backdrop = false
 		}
@@ -198,11 +198,13 @@ ruled.client.connect_signal("request::rules", function()
 		rule_any   = {  
 			class = {
 				"vlc",
-				"Spotify"
+				"Spotify",
+				"Io.github.celluloid_player.Celluloid",
+				"mpv",
 			}
 		},
 		properties = { 
-			tag = '6',
+			tag = '',
 			draw_backdrop = false
 		}
 	}
@@ -219,7 +221,7 @@ ruled.client.connect_signal("request::rules", function()
 			}
 		},
 		properties = { 
-			tag = '7'
+			tag = ''
 		}
 	}
 

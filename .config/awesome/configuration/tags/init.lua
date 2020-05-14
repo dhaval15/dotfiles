@@ -3,42 +3,40 @@ local gears = require('gears')
 local beautiful = require('beautiful')
 local dpi = beautiful.xresources.apply_dpi
 
-local icons = require('theme.icons')
-
 local tags = {
 	{
-		icon = icons.terminal,
+		text_icon = '',
 		type = 'terminal',
 		screen = 1
 	},
 	{
-		icon = icons.web_browser,
 		type = 'browsing',
+		text_icon ='',
 		screen = 1
 	},
 	{
-		icon = icons.development,
 		type = 'development',
+		text_icon  = '',
 		screen = 1
 	},
 	{
-		icon = icons.file_manager,
 		type = 'files',
+		text_icon  = '',
 		screen = 1
 	},
 	{
-		icon = icons.text_editor,
 		type = 'writing',
+		text_icon  = '',
 		screen = 1
 	},
 	{
-		icon = icons.multimedia,
 		type = 'media',
+		text_icon  ='',
 		screen = 1
 	},
 	{
-		icon = icons.graphics,
 		type = 'art',
+		text_icon  ='',
 		screen = 1
 	},
 }
@@ -56,10 +54,9 @@ end)
 screen.connect_signal("request::desktop_decoration", function(s)
 	for i, tag in pairs(tags) do
 		awful.tag.add(
-			i,
+			tag.text_icon,
 			{
-				icon = tag.icon,
-				icon_only = true,
+				icon_only = false,
 				layout = awful.layout.suit.tile,
 				gap_single_client = false,
 				gap = beautiful.useless_gap,
