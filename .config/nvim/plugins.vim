@@ -14,6 +14,8 @@ Plug 'vim-airline/vim-airline'
 
 Plug 'mhinz/vim-startify'
 
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 
