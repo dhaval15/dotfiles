@@ -116,7 +116,15 @@ local globalKeys = awful.util.table.join(
 		function()
 			awful.spawn("run_prompt")
 		end,
-		{description = 'Rofi Windows', group = 'Launcher'}
+		{description = 'Dmenu', group = 'Launcher'}
+    ),
+    awful.key(
+		{},
+		'F7',
+		function()
+			awful.spawn("open_project")
+		end,
+		{description = 'Open Project', group = 'Launcher'}
     ),
     awful.key(
         {modkey}, 

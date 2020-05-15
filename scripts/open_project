@@ -1,0 +1,5 @@
+#!/bin/zsh
+projdir=$(ls $HOME/Projects/ | dmenu2 -h 28 -fn 'Dejavu Sans' -nb "#0C0C22" -nf "#ffeedd" -sb "#ffeedd" -sf "#0C0C22" -p Projects)
+if [ "$projdir" ]; then
+	hashcode $HOME/Projects/$projdir
+fi
